@@ -39,7 +39,7 @@
 }
 
 .input::placeholder {
-  color: #222;
+  color: rgb(158, 156, 156);
   transition: color 0.3s ease;
 }
 
