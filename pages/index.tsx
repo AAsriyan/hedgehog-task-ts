@@ -9,6 +9,7 @@ import ShowBalance from "../components/ShowBalance";
 import SendAndReceive from "../components/SendAndReceive";
 import SendSol from "../components/Tokens/SendSol";
 import CreateTokenAccount from "../components/Mints/CreateTokenAccount";
+import MintTokens from "../components/Mints/MintTokens";
 import Card from "../UI/Card";
 import styles from "../styles/Home.module.css";
 import { Fragment } from "react";
@@ -85,6 +86,7 @@ const Home: NextPage = () => {
 					Mint Token
 				</button>
 			</div>
+			{isMinting && <MintTokens onClose={toggleMintingHandler} />}
 			<ShowBalance balance={balance} />
 			<SendAndReceive
 				userWalletKey={userPublicKey}
