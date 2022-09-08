@@ -10,6 +10,7 @@ import SendAndReceive from "../components/SendAndReceive";
 import SendSol from "../components/Tokens/SendSol";
 import CreateTokenAccount from "../components/Mints/CreateTokenAccount";
 import MintTokens from "../components/Mints/MintTokens";
+import TokenList from "../components/Tokens/TokenList";
 import Card from "../UI/Card";
 import styles from "../styles/Home.module.css";
 import { Fragment } from "react";
@@ -19,7 +20,6 @@ const Home: NextPage = () => {
 	const [isCreatingTokenAccount, setIsCreatingTokenAccount] = useState(false);
 	const [balance, setBalance] = useState(0);
 	const [userPublicKey, setUserPublicKey] = useState("");
-	const [isSendingTokens, setIsSendingTokens] = useState(false);
 	const [isSendingSol, setIsSendingSol] = useState(false);
 	const [isRefresh, setIsRefresh] = useState(false);
 
@@ -99,6 +99,7 @@ const Home: NextPage = () => {
 					refresh={() => setIsRefresh((prevState) => !prevState)}
 				/>
 			)}
+			<TokenList copyText={copyTextHandler} />
 		</Fragment>
 	);
 	return (
