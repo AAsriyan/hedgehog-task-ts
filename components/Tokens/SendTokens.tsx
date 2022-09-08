@@ -33,8 +33,6 @@ const SendTokens = ({ onClose, mint, tokenAccountPubkey }: SendTokensProp) => {
 				mint,
 				amount
 			);
-
-			console.log(signature);
 		} catch (error) {
 			console.log(error);
 		}

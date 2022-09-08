@@ -43,8 +43,8 @@ export const getOrCreateAssociatedTokenAccountIds = async (
 	mintKey: PublicKey
 ) => {
 	const associatedAddress = await getAssociatedTokenAddress(mintKey, ownerKey);
-	console.log("associated address", associatedAddress);
 	const accountInfo = await connection.getAccountInfo(associatedAddress);
+
 	if (accountInfo !== null) {
 		return { associatedAddress, instruction: null };
 	}
