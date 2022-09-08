@@ -25,7 +25,7 @@ const SendTokens = ({ onClose, mint, tokenAccountPubkey }: SendTokensProp) => {
 			if (!wallet || !connection) {
 				return;
 			}
-			const signature = await sendTokens(
+			await sendTokens(
 				connection,
 				wallet,
 				tokenAccountPubkey,

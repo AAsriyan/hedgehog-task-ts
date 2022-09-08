@@ -54,6 +54,11 @@
   margin-bottom: 10px;
 }
 
+.paragraph {
+  word-wrap: normal;
+  max-width: fit-content;
+}
+
 .token {
   margin: 20px 0 20px 0;
   border:#f2f2f2;

@@ -21,10 +21,7 @@ const CreateTokenAccount: FC<{ onClose: () => void }> = ({ onClose }) => {
 	const { publicKey, sendTransaction } = useWallet();
 
 	const sigAndTokenAccount = () => {
-		return (
-			sig &&
-			`This is the sig ${sig} and this is the token account ${tokenAccount}`
-		);
+		return `New Token Account: ${tokenAccount}`;
 	};
 
 	const createTokenAccountHandler = async (e: any) => {
@@ -92,7 +89,7 @@ const CreateTokenAccount: FC<{ onClose: () => void }> = ({ onClose }) => {
 						Create Token Account
 					</button>
 				</div>
-				<p>{sigAndTokenAccount()}</p>
+				<p className={styles.paragraph}>{sigAndTokenAccount()}</p>
 			</form>
 		</Modal>
 	);
