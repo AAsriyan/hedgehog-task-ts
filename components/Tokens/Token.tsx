@@ -45,7 +45,7 @@ const Token = ({
 			await signAndSendRawTransaction(connection, wallet, [instruction]);
 			setTimeout(() => {
 				refresh();
-			}, 1000);
+			}, 2000);
 		} catch (error) {
 			console.log(error);
 		}
