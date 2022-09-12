@@ -2,9 +2,9 @@ import { FC } from "react";
 import { useConnection, useAnchorWallet } from "@solana/wallet-adapter-react";
 import * as web3 from "@solana/web3.js";
 import { createMintToInstruction } from "@solana/spl-token";
+import { signAndSendRawTransaction } from "../../utils/helpers";
 
 import Modal from "../../UI/Modal";
-import { signAndSendRawTransaction } from "../../utils/helpers";
 
 import styles from "../../styles/Home.module.css";
 

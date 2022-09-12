@@ -9,14 +9,12 @@ import ShowBalance from "../components/ShowBalance";
 import SendAndReceive from "../components/SendAndReceive";
 import SendSol from "../components/Tokens/SendSol";
 import CreateTokenAccount from "../components/Mints/CreateTokenAccount";
-import MintTokens from "../components/Mints/MintTokens";
 import TokenList from "../components/Tokens/TokenList";
 import Card from "../UI/Card";
 import styles from "../styles/Home.module.css";
 import { Fragment } from "react";
 
 const Home: NextPage = () => {
-	const [isMinting, setIsMinting] = useState(false);
 	const [isCreatingTokenAccount, setIsCreatingTokenAccount] = useState(false);
 	const [balance, setBalance] = useState(0);
 	const [userPublicKey, setUserPublicKey] = useState("");
@@ -39,10 +37,6 @@ const Home: NextPage = () => {
 
 	const toggleSendHandler = () => {
 		setIsSendingSol((prevSendingState: boolean) => !prevSendingState);
-	};
-
-	const toggleMintingHandler = () => {
-		setIsMinting((prevMintingState) => !prevMintingState);
 	};
 
 	const toggleCreatingAccountHandler = () => {
@@ -78,15 +72,6 @@ const Home: NextPage = () => {
 					Create Token Account
 				</button>
 			</div>
-			<div className={styles["label-fields"]}>
-				<button
-					className={styles["button-main"]}
-					onClick={toggleMintingHandler}
-				>
-					Mint Token
-				</button>
-			</div>
-			{isMinting && <MintTokens onClose={toggleMintingHandler} />}
 			<ShowBalance balance={balance} />
 			<SendAndReceive
 				userWalletKey={userPublicKey}

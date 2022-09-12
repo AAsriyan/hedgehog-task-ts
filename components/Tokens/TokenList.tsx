@@ -18,6 +18,7 @@ export type TokenItem = {
 const TokenList = ({ copyText }: TokenListProps) => {
 	const [tokenList, setTokenList] = useState<TokenItem[]>([]);
 	const [isLoading, setIsLoading] = useState(false);
+	const [isRefresh, setIsRefresh] = useState(false);
 	const { connection } = useConnection();
 	const { publicKey } = useWallet();
 
@@ -49,7 +50,7 @@ const TokenList = ({ copyText }: TokenListProps) => {
 		};
 
 		getTokenList();
-	}, [connection, publicKey]);
+	}, [connection, publicKey, isRefresh]);
 
 	return (
 		<Card>
@@ -58,13 +59,14 @@ const TokenList = ({ copyText }: TokenListProps) => {
 				<p>You have no tokens at the moment.</p>
 			)}
 			{!isLoading &&
-				tokenList.length > 1 &&
+				tokenList.length >= 1 &&
 				tokenList.map((token) => {
 					return (
 						<Token
 							key={token.pubkey.toBase58()}
 							tokenInfo={token}
 							copyText={copyText}
+							refresh={() => setIsRefresh((prevState) => !prevState)}
 						/>
 					);
 				})}

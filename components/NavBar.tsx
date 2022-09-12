@@ -8,7 +8,7 @@ const NavBar = () => {
 
 	return (
 		<div className={styles.navbar}>
-			<h1>Solana Wallet Task</h1>
+			<h1 className={styles["title-text"]}>Solana Wallet Task</h1>
 			{publicKey && <WalletDisconnectButton />}
 		</div>
 	);
